@@ -1,5 +1,5 @@
-import java.util.*;
-
+import java.util.HashMap;
+import java.util.Map;
 /**
    Chapter 18, Programming Challenge 4
 */
@@ -14,14 +14,18 @@ public class StockMap
       Constructor
    */
    
-   public StockMap()
-   {
+   public class StockMap() {
+private Map<String, Stock> stockMap;
 
+public StockMap() {
+   stockMap = new HashMap<>();
+}
    }
    
    /**
       The add method puts a mapping into the map.
       It maps a stock symbol with the Stock object.
+      
       @param stock The stock object.
    */
    
@@ -29,7 +33,7 @@ public class StockMap
    {
       // Put a mapping into the map. The stock
       // symbol is the key.
-
+stockMap.put(stock.getSymbol(), stock);
    }
    
    /**
@@ -42,6 +46,5 @@ public class StockMap
    
    public Stock getStock(String symbol)
    {
-
+return stockMap.get(symbol);
    }
-}
